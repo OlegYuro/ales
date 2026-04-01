@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ales &amp; Lika — Wedding</title>
+  <title>Ales &amp; Lika — Свадьба</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
@@ -11,8 +11,11 @@
 </head>
 <body>
 
-  <!-- Language switcher -->
-  <button class="lang-btn" id="lang-btn" onclick="toggleLang()">RU</button>
+  <audio id="bg-music" loop src="music.mp3" preload="auto"></audio>
+
+  <!-- Music toggle + Language switcher -->
+  <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Музыка / Music">♪</button>
+  <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
 
   <!-- Hero -->
   <section class="hero">
@@ -79,6 +82,68 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
+    </div>
+  </section>
+
+  <!-- Survey -->
+  <section class="survey-section">
+    <h2 class="section-title" data-i18n="survey_title">Анкета гостя 💌</h2>
+    <p class="survey-subtitle" data-i18n="survey_sub">Несколько важных вопросов</p>
+
+    <form class="survey-form" id="survey-form" onsubmit="submitSurvey(event)">
+
+      <div class="survey-field">
+        <label class="survey-label" data-i18n="survey_q1">Ваше имя</label>
+        <input class="survey-input" id="survey-name" type="text" required
+               placeholder="Как вас величать?" data-i18n-ph="survey_q1_ph" />
+      </div>
+
+      <div class="survey-field">
+        <label class="survey-label" data-i18n="survey_q2">Вы придёте на наш праздник?</label>
+        <div class="survey-options">
+          <label class="survey-option">
+            <input type="radio" name="attend" value="yes" required />
+            <span data-i18n="survey_a2_1">Конечно буду! 🎉</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="attend" value="no" />
+            <span data-i18n="survey_a2_2">К сожалению, нет 😢</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="attend" value="maybe" />
+            <span data-i18n="survey_a2_3">Ещё думаю... 🤔</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="survey-field">
+        <label class="survey-label" data-i18n="survey_q3">Сколько денег вы нам подарите? 💸</label>
+        <div class="survey-options">
+          <label class="survey-option">
+            <input type="radio" name="gift" value="modest" required />
+            <span data-i18n="survey_a3_1">Скромно, но со вкусом 💝</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="gift" value="wallet" />
+            <span data-i18n="survey_a3_2">Всё что есть в кошельке 💰</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="gift" value="piggy" />
+            <span data-i18n="survey_a3_3">Сломаю копилку 🐷</span>
+          </label>
+          <label class="survey-option">
+            <input type="radio" name="gift" value="kidney" />
+            <span data-i18n="survey_a3_4">Продам почку ради вас 🫁</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="survey-btn" data-i18n="survey_submit">Отправить ответы</button>
+    </form>
+
+    <div class="survey-thanks" id="survey-thanks">
+      <p class="survey-thanks__icon">💕</p>
+      <p class="survey-thanks__text" data-i18n="survey_thanks">Спасибо! Ждём вас 27 июня!</p>
     </div>
   </section>
 
