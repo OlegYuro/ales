@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ales &amp; Lika — Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__pre">You are invited to the wedding of</p>
+      <h1 class="hero__names">Ales <span>&amp;</span> Lika</h1>
+      <p class="hero__date">28 · 07 · 2026</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="countdown-section">
+    <h2 class="section-title">Counting the days</h2>
+    <div class="countdown" id="countdown">
+      <div class="countdown__block">
+        <span class="countdown__num" id="cd-days">--</span>
+        <span class="countdown__label">Days</span>
+      </div>
+      <div class="countdown__sep">:</div>
+      <div class="countdown__block">
+        <span class="countdown__num" id="cd-hours">--</span>
+        <span class="countdown__label">Hours</span>
+      </div>
+      <div class="countdown__sep">:</div>
+      <div class="countdown__block">
+        <span class="countdown__num" id="cd-minutes">--</span>
+        <span class="countdown__label">Minutes</span>
+      </div>
+      <div class="countdown__sep">:</div>
+      <div class="countdown__block">
+        <span class="countdown__num" id="cd-seconds">--</span>
+        <span class="countdown__label">Seconds</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo -->
+  <section class="photo-section">
+    <div class="photo-frame">
+      <img
+        src="photo.jpg"
+        alt="Ales &amp; Lika"
+        class="couple-photo"
+        onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='flex';"
+      />
+      <div class="photo-placeholder" id="photo-placeholder">
+        <span>♡</span>
+        <p>Our photo coming soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="location-section">
+    <h2 class="section-title">Where to find us</h2>
+    <p class="location-subtitle">Brest, Belarus</p>
+    <div class="map-container">
+      <iframe
+        title="Wedding location — Brest, Belarus"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75889.95717596888!2d23.602223899999998!3d52.09762785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47214b1f522bc18b%3A0x9db83b5d0cdd3ac5!2sBrest%2C%20Belarus!5e0!3m2!1sen!2s!4v1711900000000!5m2!1sen!2s"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>28 July 2026 &nbsp;·&nbsp; Brest, Belarus</p>
+    <p class="footer__heart">♡</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
