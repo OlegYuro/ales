@@ -13,6 +13,17 @@
 
   <audio id="bg-music" loop src="music.mp3" preload="auto"></audio>
 
+  <!-- Splash overlay — one click unlocks browser audio autoplay -->
+  <div id="splash" class="splash" role="button" aria-label="Войти на сайт">
+    <div class="splash__inner">
+      <p class="splash__pre">Ales &amp; Lika</p>
+      <p class="splash__date">27 · 06 · 2026</p>
+      <div class="splash__divider"></div>
+      <p class="splash__cta">Нажмите, чтобы войти</p>
+      <span class="splash__icon">♫</span>
+    </div>
+  </div>
+
   <!-- Music toggle + Language switcher -->
   <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Музыка / Music">♪</button>
   <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>

@@ -130,11 +130,16 @@ function toggleMusic() {
   }
 }
 
-// Attempt autoplay on load; browsers may block it — button stays in paused state if so
-window.addEventListener('load', () => {
-  music.play()
-    .then(() => setMusicState(true))
-    .catch(() => setMusicState(false));
+// ── Splash overlay (needed to satisfy browser autoplay policy) ───
+window.addEventListener('DOMContentLoaded', () => {
+  const splash = document.getElementById('splash');
+  splash.addEventListener('click', () => {
+    splash.classList.add('splash--hidden');
+    splash.addEventListener('transitionend', () => splash.remove(), { once: true });
+    music.play()
+      .then(() => setMusicState(true))
+      .catch(() => setMusicState(false));
+  }, { once: true });
 });
 
 // ── Survey ────────────────────────────────────────────────

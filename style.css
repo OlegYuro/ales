@@ -282,6 +282,76 @@ body {
 }
 
 /* ─────────────────────────────────────────
+   Splash overlay
+───────────────────────────────────────── */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.8s ease;
+}
+
+.splash--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash__inner {
+  text-align: center;
+  user-select: none;
+}
+
+.splash__pre {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 300;
+  color: var(--dark);
+  letter-spacing: 0.06em;
+}
+
+.splash__date {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+.splash__divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 1.8rem auto;
+}
+
+.splash__cta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--light-text);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.splash__icon {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--blush);
+  margin-top: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ─────────────────────────────────────────
    Music toggle button
 ───────────────────────────────────────── */
 .music-btn {
