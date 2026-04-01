@@ -4,7 +4,6 @@ const WEDDING_DATE = new Date('2026-06-27T00:00:00');
 const TRANSLATIONS = {
   en: {
     invite:   'You are invited to the wedding of',
-    and:      'and',
     counting: 'Counting the days',
     days:     'Days',
     hours:    'Hours',
@@ -18,7 +17,6 @@ const TRANSLATIONS = {
   },
   ru: {
     invite:   '\u0412\u044b \u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u044b \u043d\u0430 \u0441\u0432\u0430\u0434\u044c\u0431\u0443',
-    and:      '\u0438',
     counting: '\u0414\u043e \u0441\u0432\u0430\u0434\u044c\u0431\u044b \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c',
     days:     '\u0414\u043d\u0435\u0439',
     hours:    '\u0427\u0430\u0441\u043e\u0432',
