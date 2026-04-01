@@ -10,6 +10,7 @@
   --light-text: #7a6a6a;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Lato', sans-serif;
+  --font-count: 'Playfair Display', Georgia, serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,6 +23,30 @@ body {
   font-family: var(--font-sans);
   font-weight: 300;
   line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────
+   Language switcher
+───────────────────────────────────────── */
+.lang-btn {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 100;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-btn:hover {
+  background: var(--gold);
+  color: white;
 }
 
 /* ─────────────────────────────────────────
@@ -128,11 +153,12 @@ body {
 }
 
 .countdown__num {
-  font-family: var(--font-serif);
+  font-family: var(--font-count);
   font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1;
   color: var(--rose);
+  letter-spacing: 0.02em;
 }
 
 .countdown__label {
