@@ -108,6 +108,9 @@ window.addEventListener('DOMContentLoaded', () => {
     splash.classList.add('splash--hidden');
     splash.addEventListener('transitionend', () => splash.remove(), { once: true });
     if (musicBtn) musicBtn.classList.add('visible');
+    // Show language selector
+    const langSelector = document.getElementById('lang-selector');
+    if (langSelector) langSelector.classList.add('visible');
     // Start music on enter
     music.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
   });
