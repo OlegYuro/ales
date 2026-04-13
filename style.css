@@ -242,7 +242,7 @@ body {
    Section base + alternating backgrounds
 ───────────────────────────────────────── */
 .section {
-  padding: 0.8rem 1.5rem;
+  padding: 0.4rem 1.5rem;
 }
 
 .section--beige { background: var(--beige); }
@@ -292,7 +292,7 @@ body {
   font-style: italic;
   color: var(--dark);
   text-align: center;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 .section-title::after {
@@ -554,7 +554,7 @@ body {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 0 1.8rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   position: relative;
 }
 
@@ -564,7 +564,7 @@ body {
 
 .tl-time {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-style: normal;
   color: var(--beige);
   letter-spacing: 0.05em;
@@ -573,7 +573,7 @@ body {
 
 .tl-event {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
   font-weight: 400;
   color: var(--beige);
   line-height: 1.15;
@@ -582,7 +582,7 @@ body {
 
 .tl-desc {
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
   color: rgba(241, 236, 217, 0.9);
   line-height: 1.75;
   font-weight: 300;
@@ -752,7 +752,7 @@ body {
 }
 .footer__heart {
   font-size: 1.5rem;
-  color: var(--olive);
+  color: var(--beige);
   margin-top: 0.8rem;
 }
 
