@@ -43,6 +43,9 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .music-btn.visible { display: flex; }
 .music-btn:hover,
@@ -75,6 +78,9 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
   letter-spacing: 0.1em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .lang-btn:hover {
   background: var(--dark);
@@ -236,7 +242,7 @@ body {
    Section base + alternating backgrounds
 ───────────────────────────────────────── */
 .section {
-  padding: 1.2rem 1.5rem;
+  padding: 0.8rem 1.5rem;
 }
 
 .section--beige { background: var(--beige); }
@@ -547,7 +553,7 @@ body {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 0 1.8rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
   position: relative;
 }
 
@@ -737,7 +743,7 @@ body {
 .footer {
   padding: 3rem 1.5rem;
   text-align: center;
-  background: var(--dark);
+  background: var(--olive);
   color: rgba(241, 236, 217, 0.55);
   font-family: var(--font-sans);
   font-size: 0.85rem;
