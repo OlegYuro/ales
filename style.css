@@ -149,8 +149,8 @@ body {
 
 .hero__label {
   font-family: var(--font-sans);
-  font-size: clamp(0.8rem, 2.5vw, 1.05rem);
-  letter-spacing: 0.45em;
+  font-size: clamp(0.9rem, 2.8vw, 1.2rem);
+  letter-spacing: 0.5em;
   text-transform: uppercase;
   color: var(--dark-muted);
   margin-bottom: 1.4rem;
@@ -158,11 +158,11 @@ body {
 
 .hero__names {
   font-family: var(--font-serif);
-  font-size: clamp(4.5rem, 16vw, 11rem);
+  font-size: clamp(5.5rem, 20vw, 14rem);
   font-weight: 300;
-  line-height: 1.02;
+  line-height: 1.0;
   color: var(--dark);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .hero__date {
@@ -185,12 +185,13 @@ body {
   bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   color: var(--dark);
-  opacity: 0.5;
+  opacity: 0.75;
   z-index: 1;
   user-select: none;
-  animation: bounce 2.2s ease-in-out infinite;
+  animation: bounce 2s ease-in-out infinite;
+  font-weight: 300;
 }
 
 @keyframes bounce {
@@ -268,8 +269,8 @@ body {
 ───────────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(48px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
+  transform: translateY(90px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.visible {
   opacity: 1;
@@ -343,7 +344,7 @@ body {
   font-weight: 700;
   padding: 0;
   overflow: visible;
-  height: 2.8rem;
+  height: 3rem;
 }
 
 .calendar__day-num {
@@ -351,15 +352,15 @@ body {
   z-index: 2;
   font-size: 0.95rem;
   line-height: 1;
-  margin-top: 0.25rem;
+  /* no margin — centred by flex parent */
 }
 
 .calendar__heart-outline {
   position: absolute;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -46%);
   z-index: 1;
   line-height: 1;
   opacity: 0.9;
