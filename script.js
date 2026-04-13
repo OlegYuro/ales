@@ -21,6 +21,14 @@ function setLanguage(lang) {
     }
   });
   
+  // Update all input placeholders
+  document.querySelectorAll('[data-ru-placeholder]').forEach(el => {
+    const placeholder = el.getAttribute(`data-${lang}-placeholder`);
+    if (placeholder) {
+      el.placeholder = placeholder;
+    }
+  });
+  
   // Update map toggle button
   const mapBtn = document.getElementById('map-toggle-btn');
   if (mapBtn && !mapBtn.classList.contains('open')) {
