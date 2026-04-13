@@ -299,7 +299,7 @@ body {
 
 .calendar__header {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-style: italic;
   color: var(--dark);
   text-align: center;
@@ -315,7 +315,7 @@ body {
 
 .calendar__dow {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(61,64,45,0.5);
@@ -325,7 +325,7 @@ body {
 
 .calendar__day {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   text-align: center;
   padding: 0.35rem 0.2rem;
   color: var(--dark);
@@ -375,6 +375,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
 
 .countdown__block {
@@ -524,7 +525,7 @@ body {
 .tl-time {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 3rem);
-  font-style: italic;
+  font-style: normal;
   color: var(--beige);
   letter-spacing: 0.05em;
   padding-top: 0.1rem;
@@ -532,7 +533,7 @@ body {
 
 .tl-event {
   font-family: var(--font-serif);
-  font-size: clamp(1.9rem, 5.5vw, 2.8rem);
+  font-size: clamp(2.2rem, 6vw, 3rem);
   font-weight: 400;
   color: var(--beige);
   line-height: 1.15;
@@ -614,7 +615,7 @@ body {
   display: block;
   font-family: var(--font-serif);
   font-size: 1.45rem;
-  font-style: italic;
+  font-style: normal;
   color: var(--dark);
   margin-bottom: 0.8rem;
 }
@@ -632,7 +633,7 @@ body {
   transition: border-color 0.2s;
 }
 .survey-input:focus { border-color: var(--dark); }
-.survey-input::placeholder { color: var(--olive-dark); }
+.survey-input::placeholder { color: var(--olive-dark); font-style: italic; opacity: 0.6; }
 
 .survey-options {
   display: flex;
