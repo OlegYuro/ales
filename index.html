@@ -3,164 +3,334 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ales &amp; Lika — Свадьба</title>
+  <title>Ales &amp; Anzhelika — 27.06.2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <audio id="bg-music" loop src="music.mp3" preload="auto"></audio>
 
-  <!-- Splash overlay — one click unlocks browser audio autoplay -->
-  <div id="splash" class="splash" role="button" aria-label="Войти на сайт">
+  <!-- Splash: invitation screen with music toggle -->
+  <div id="splash" class="splash" role="button" aria-label="Открыть приглашение">
     <div class="splash__inner">
-      <p class="splash__pre">Ales &amp; Lika</p>
-      <p class="splash__date">27 · 06 · 2026</p>
+      <p class="splash__label">Вам пришло приглашение</p>
       <div class="splash__divider"></div>
-      <p class="splash__cta">Нажмите, чтобы войти</p>
-      <span class="splash__icon">♫</span>
+      <p class="splash__names">Ales &amp; Anzhelika</p>
+      <p class="splash__date">27 · 06 · 2026</p>
+      <button class="splash__music-btn" id="splash-music-btn" aria-label="Включить музыку">
+        <span class="splash__music-icon" id="splash-music-icon">♪</span>
+        <span class="splash__music-text" id="splash-music-text">Включить музыку</span>
+      </button>
+      <button class="splash__enter" id="splash-enter">Открыть приглашение ↓</button>
     </div>
   </div>
 
-  <!-- Music toggle + Language switcher -->
-  <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Музыка / Music">♪</button>
-  <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
+  <!-- Music toggle (visible after splash) -->
+  <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Музыка">♪</button>
 
-  <!-- Hero -->
+  <!-- ── Hero ───────────────────────────────────────────── -->
   <section class="hero">
-    <div class="hero__overlay"></div>
     <div class="hero__content">
-      <p class="hero__pre" data-i18n="invite">You are invited to the wedding of</p>
-      <h1 class="hero__names">Ales <span>&amp;</span> Lika</h1>
-      <p class="hero__date">27 &middot; 06 &middot; 2026</p>
-      <div class="divider"></div>
+      <p class="hero__label">Wedding day</p>
+      <h1 class="hero__names">Ales <span>&amp;</span> Anzhelika</h1>
+      <p class="hero__date">27 · 06 · 2026</p>
+      <div class="hero__divider"></div>
     </div>
   </section>
 
-  <!-- Countdown -->
-  <section class="countdown-section">
-    <h2 class="section-title" data-i18n="counting">Counting the days</h2>
-    <div class="countdown" id="countdown">
-      <div class="countdown__block">
-        <span class="countdown__num" id="cd-days">--</span>
-        <span class="countdown__label" data-i18n="days">Days</span>
-      </div>
-      <div class="countdown__sep">:</div>
-      <div class="countdown__block">
-        <span class="countdown__num" id="cd-hours">--</span>
-        <span class="countdown__label" data-i18n="hours">Hours</span>
-      </div>
-      <div class="countdown__sep">:</div>
-      <div class="countdown__block">
-        <span class="countdown__num" id="cd-minutes">--</span>
-        <span class="countdown__label" data-i18n="minutes">Minutes</span>
-      </div>
-      <div class="countdown__sep">:</div>
-      <div class="countdown__block">
-        <span class="countdown__num" id="cd-seconds">--</span>
-        <span class="countdown__label" data-i18n="seconds">Seconds</span>
-      </div>
+  <!-- ── Invitation text ───────────────────────────────── -->
+  <section class="section section--beige reveal">
+    <div class="section__inner section__inner--narrow">
+      <p class="invite-text">
+        Дорогие родные, близкие и друзья!<br><br>
+        Случилось невероятное — наша безграничная любовь дала повод собрать всех вместе.<br><br>
+        Приглашаем отпраздновать самое важное событие в нашей жизни — день нашей свадьбы!
+      </p>
     </div>
   </section>
 
-  <!-- Photo -->
-  <section class="photo-section">
-    <div class="photo-frame">
-      <img
-        src="photo.jpg"
-        alt="Ales &amp; Lika"
-        class="couple-photo"
-        onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='flex';"
-      />
-      <div class="photo-placeholder" id="photo-placeholder">
-        <span>&#9825;</span>
-        <p data-i18n="photo">Our photo coming soon</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Location -->
-  <section class="location-section">
-    <h2 class="section-title" data-i18n="where">Where to find us</h2>
-    <p class="location-subtitle" data-i18n="address">ул. Шоссейная 14, Брест, Беларусь</p>
-    <div class="map-container">
-      <iframe
-        title="Wedding location"
-        src="https://maps.google.com/maps?q=Shosseinaya+14,+Brest,+Belarus&t=&z=16&ie=UTF8&iwloc=B&output=embed"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- Survey -->
-  <section class="survey-section">
-    <h2 class="section-title" data-i18n="survey_title">Анкета гостя 💌</h2>
-    <p class="survey-subtitle" data-i18n="survey_sub">Несколько важных вопросов</p>
-
-    <form class="survey-form" id="survey-form" onsubmit="submitSurvey(event)">
-
-      <div class="survey-field">
-        <label class="survey-label" data-i18n="survey_q1">Ваше имя</label>
-        <input class="survey-input" id="survey-name" type="text" required
-               placeholder="Как вас величать?" data-i18n-ph="survey_q1_ph" />
-      </div>
-
-      <div class="survey-field">
-        <label class="survey-label" data-i18n="survey_q2">Вы придёте на наш праздник?</label>
-        <div class="survey-options">
-          <label class="survey-option">
-            <input type="radio" name="attend" value="yes" required />
-            <span data-i18n="survey_a2_1">Конечно буду! 🎉</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="attend" value="no" />
-            <span data-i18n="survey_a2_2">К сожалению, нет 😢</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="attend" value="maybe" />
-            <span data-i18n="survey_a2_3">Ещё думаю... 🤔</span>
-          </label>
+  <!-- ── Calendar June 2026 ─────────────────────────────→ -->
+  <section class="section section--olive reveal">
+    <div class="section__inner">
+      <h2 class="section-title">Дата</h2>
+      <div class="calendar">
+        <div class="calendar__header">Июнь 2026</div>
+        <div class="calendar__grid">
+          <div class="calendar__dow">Пн</div>
+          <div class="calendar__dow">Вт</div>
+          <div class="calendar__dow">Ср</div>
+          <div class="calendar__dow">Чт</div>
+          <div class="calendar__dow">Пт</div>
+          <div class="calendar__dow">Сб</div>
+          <div class="calendar__dow">Вс</div>
+          <!-- week 1: Jun 1 = Monday -->
+          <div class="calendar__day">1</div>
+          <div class="calendar__day">2</div>
+          <div class="calendar__day">3</div>
+          <div class="calendar__day">4</div>
+          <div class="calendar__day">5</div>
+          <div class="calendar__day">6</div>
+          <div class="calendar__day">7</div>
+          <!-- week 2 -->
+          <div class="calendar__day">8</div>
+          <div class="calendar__day">9</div>
+          <div class="calendar__day">10</div>
+          <div class="calendar__day">11</div>
+          <div class="calendar__day">12</div>
+          <div class="calendar__day">13</div>
+          <div class="calendar__day">14</div>
+          <!-- week 3 -->
+          <div class="calendar__day">15</div>
+          <div class="calendar__day">16</div>
+          <div class="calendar__day">17</div>
+          <div class="calendar__day">18</div>
+          <div class="calendar__day">19</div>
+          <div class="calendar__day">20</div>
+          <div class="calendar__day">21</div>
+          <!-- week 4 -->
+          <div class="calendar__day">22</div>
+          <div class="calendar__day">23</div>
+          <div class="calendar__day">24</div>
+          <div class="calendar__day">25</div>
+          <div class="calendar__day">26</div>
+          <div class="calendar__day calendar__day--wedding">27<span class="calendar__heart">♥</span></div>
+          <div class="calendar__day">28</div>
+          <!-- week 5 -->
+          <div class="calendar__day">29</div>
+          <div class="calendar__day">30</div>
         </div>
       </div>
-
-      <div class="survey-field">
-        <label class="survey-label" data-i18n="survey_q3">Сколько денег вы нам подарите? 💸</label>
-        <div class="survey-options">
-          <label class="survey-option">
-            <input type="radio" name="gift" value="modest" required />
-            <span data-i18n="survey_a3_1">Скромно, но со вкусом 💝</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="gift" value="wallet" />
-            <span data-i18n="survey_a3_2">Всё что есть в кошельке 💰</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="gift" value="piggy" />
-            <span data-i18n="survey_a3_3">Сломаю копилку 🐷</span>
-          </label>
-          <label class="survey-option">
-            <input type="radio" name="gift" value="kidney" />
-            <span data-i18n="survey_a3_4">Продам почку ради вас 🫁</span>
-          </label>
-        </div>
-      </div>
-
-      <button type="submit" class="survey-btn" data-i18n="survey_submit">Отправить ответы</button>
-    </form>
-
-    <div class="survey-thanks" id="survey-thanks">
-      <p class="survey-thanks__icon">💕</p>
-      <p class="survey-thanks__text" data-i18n="survey_thanks">Спасибо! Ждём вас 27 июня!</p>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ── Countdown ──────────────────────────────────────── -->
+  <section class="section section--beige reveal">
+    <div class="section__inner">
+      <h2 class="section-title">До свадьбы осталось</h2>
+      <div class="countdown" id="countdown">
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-days">--</span>
+          <span class="countdown__label">Дней</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-hours">--</span>
+          <span class="countdown__label">Часов</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-minutes">--</span>
+          <span class="countdown__label">Минут</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-seconds">--</span>
+          <span class="countdown__label">Секунд</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Photo of couple ───────────────────────────────── -->
+  <section class="section section--olive reveal">
+    <div class="section__inner">
+      <div class="photo-frame">
+        <img
+          src="photo.jpg"
+          alt="Ales &amp; Anzhelika"
+          class="couple-photo"
+          onerror="this.style.display='none';document.getElementById('photo-ph').style.display='flex';"
+        />
+        <div class="photo-placeholder" id="photo-ph">
+          <span>&#9825;</span>
+          <p>Фото скоро появится</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Venue ─────────────────────────────────────────── -->
+  <section class="section section--beige reveal">
+    <div class="section__inner">
+      <h2 class="section-title">Место проведения</h2>
+
+      <div class="venue-photo-wrap">
+        <img
+          src="venue.jpg"
+          alt="Victory Hall"
+          class="venue-photo"
+          onerror="this.style.display='none';"
+        />
+      </div>
+
+      <p class="venue-text">
+        Наше торжество состоится в <strong>Victory Hall</strong><br>
+        д. Богданы, ул. Завидова, 4
+      </p>
+
+      <button class="map-toggle-btn" id="map-toggle-btn" onclick="toggleMap()">
+        Открыть карту
+      </button>
+      <div class="map-container" id="map-container">
+        <iframe
+          title="Victory Hall"
+          src="https://maps.google.com/maps?q=Богданы+ул+Завидова+4+Брест&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ──────────────────────────────────────── -->
+  <section class="section section--olive reveal">
+    <div class="section__inner section__inner--narrow">
+      <h2 class="section-title">Тайминг</h2>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time">12:30</div>
+          <div class="tl-body">
+            <div class="tl-event">Венчание</div>
+            <div class="tl-desc">Мы начнём наш день с таинства венчания в костёле Воздвижения Святого Креста, г. Брест, ул. Ленина, 34 (присутствие по желанию)</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">13:30</div>
+          <div class="tl-body">
+            <div class="tl-event">Трансфер</div>
+            <div class="tl-desc">Предлагаем организованно добраться до Victory Hall</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">14:30</div>
+          <div class="tl-body">
+            <div class="tl-event">Фуршет</div>
+            <div class="tl-desc">Время пролетит незаметно за новыми знакомствами и бокалом игристого</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">15:00</div>
+          <div class="tl-body">
+            <div class="tl-event">Церемония</div>
+            <div class="tl-desc">Мы собираемся сказать друг другу самые важные слова</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">16:00</div>
+          <div class="tl-body">
+            <div class="tl-event">Банкет</div>
+            <div class="tl-desc">Самое время для вкусной еды, веселья и танцев</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">23:00</div>
+          <div class="tl-body">
+            <div class="tl-event">Финал</div>
+            <div class="tl-desc">Надеемся, что наш праздник запомнится вам навсегда</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">23:30</div>
+          <div class="tl-body">
+            <div class="tl-event">Трансфер</div>
+            <div class="tl-desc">Предлагаем организованный трансфер в г. Брест</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Dress code ─────────────────────────────────────── -->
+  <section class="section section--beige reveal">
+    <div class="section__inner section__inner--narrow">
+      <h2 class="section-title">Дресс-код</h2>
+      <p class="body-text">
+        Мы не ограничиваем наших гостей в выборе нарядов и цветовых гамм. При этом будем благодарны, если дамы при выборе образа откажутся от белого цвета.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Details ───────────────────────────────────────── -->
+  <section class="section section--olive reveal">
+    <div class="section__inner section__inner--narrow">
+      <h2 class="section-title">Детали</h2>
+      <div class="details-list">
+        <div class="details-item">
+          <span class="details-icon">🍾</span>
+          <p>Приятным комплиментом для нас будет, если вместо цветов вы решите подарить нам бутылочку вашего любимого алкогольного напитка.</p>
+        </div>
+        <div class="details-item">
+          <span class="details-icon">🏨</span>
+          <p>Для гостей из других городов мы с радостью предоставим размещение.</p>
+        </div>
+        <div class="details-item">
+          <span class="details-icon">💬</span>
+          <p>После подтверждения присутствия мы добавим вас в свадебный чат — там будем отвечать на все вопросы наших гостей.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Guest survey ───────────────────────────────────── -->
+  <section class="section section--beige reveal" id="survey-section">
+    <div class="section__inner section__inner--narrow">
+      <h2 class="section-title">Анкета гостя</h2>
+      <p class="survey-intro">
+        Мы будем очень рады видеть вас на нашем торжестве!<br>
+        Пожалуйста, заполните анкету и сообщите нам о своём присутствии до <strong>31 мая 2026 г.</strong>
+      </p>
+
+      <form class="survey-form" id="survey-form" onsubmit="submitSurvey(event)">
+
+        <div class="survey-field">
+          <label class="survey-label">Введите ваше ФИО</label>
+          <input class="survey-input" id="survey-name" type="text" required placeholder="Фамилия Имя Отчество" />
+        </div>
+
+        <div class="survey-field">
+          <label class="survey-label">Сможете ли вы прийти к нам на свадьбу?</label>
+          <div class="survey-options">
+            <label class="survey-option">
+              <input type="radio" name="attend" value="yes" required />
+              <span>Да, с удовольствием</span>
+            </label>
+            <label class="survey-option">
+              <input type="radio" name="attend" value="no" />
+              <span>К сожалению, не смогу</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="survey-field">
+          <label class="survey-label">Есть ли аллергия?</label>
+          <input class="survey-input" id="survey-allergy" type="text" placeholder="Если есть — укажите, если нет — оставьте пустым" />
+        </div>
+
+        <button type="submit" class="survey-btn">Отправить</button>
+      </form>
+
+      <div class="survey-thanks" id="survey-thanks">
+        <p class="survey-thanks__icon">💕</p>
+        <p class="survey-thanks__text">Спасибо! Ждём вас 27 июня!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────── -->
   <footer class="footer">
-    <p data-i18n="footer">27 June 2026 &nbsp;&middot;&nbsp; Brest, Belarus</p>
+    <p>Ales &amp; Anzhelika &nbsp;·&nbsp; 27 июня 2026</p>
     <p class="footer__heart">&#9825;</p>
   </footer>
 
