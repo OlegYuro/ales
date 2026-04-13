@@ -1,6 +1,54 @@
 // Wedding date: 27 June 2026, 12:30 local time
 const WEDDING_DATE = new Date('2026-06-27T12:30:00');
 
+// Current language
+let currentLanguage = 'ru';
+
+// ── Language switching ────────────────────────────────────
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('selectedLanguage', lang);
+  
+  // Update all elements with data-* attributes
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) {
+      if (el.innerHTML && el.innerHTML.includes('<')) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
+    }
+  });
+  
+  // Update map toggle button
+  const mapBtn = document.getElementById('map-toggle-btn');
+  if (mapBtn && !mapBtn.classList.contains('open')) {
+    const openTexts = { ru: 'Открыть карту', en: 'Open map', pl: 'Otwórz mapę', it: 'Apri mappa' };
+    mapBtn.textContent = openTexts[lang] || 'Открыть карту';
+  }
+  
+  // Update survey thanks message
+  const surveyThanks = document.getElementById('survey-thanks');
+  if (surveyThanks && surveyThanks.classList.contains('survey-thanks--visible')) {
+    const thanksTexts = { 
+      ru: 'Спасибо! Ждём вас 27 июня!',
+      en: 'Thank you! We look forward to seeing you on June 27!',
+      pl: 'Dziękujemy! Czekamy na Ciebie 27 czerwca!',
+      it: 'Grazie! Ti aspettiamo il 27 giugno!'
+    };
+    surveyThanks.querySelector('.survey-thanks__text').textContent = thanksTexts[lang];
+  }
+}
+
+// Load saved language on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('selectedLanguage');
+  if (saved && saved !== 'ru') {
+    setLanguage(saved);
+  }
+});
+
 // ── Countdown ─────────────────────────────────────────────
 function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -71,7 +119,9 @@ function toggleMap() {
   const btn       = document.getElementById('map-toggle-btn');
   if (!container) return;
   const open = container.classList.toggle('open');
-  btn.textContent = open ? 'Скрыть карту' : 'Открыть карту';
+  const hideTexts = { ru: 'Скрыть карту', en: 'Hide map', pl: 'Ukryj mapę', it: 'Nascondi mappa' };
+  const showTexts = { ru: 'Открыть карту', en: 'Open map', pl: 'Otwórz mapę', it: 'Apri mappa' };
+  btn.textContent = open ? hideTexts[currentLanguage] : showTexts[currentLanguage];
 }
 
 // ── Survey ────────────────────────────────────────────────
@@ -94,7 +144,13 @@ function submitSurvey(e) {
     }
   })
   .catch(err => {
-    alert('Не удалось отправить анкету. Попробуйте ещё раз.\n' + err.message);
+    const errorTexts = {
+      ru: 'Не удалось отправить анкету. Попробуйте ещё раз.\n',
+      en: 'Failed to submit the form. Please try again.\n',
+      pl: 'Nie udało się wysłać formularza. Spróbuj ponownie.\n',
+      it: 'Errore nell\'invio del modulo. Riprova.\n'
+    };
+    alert((errorTexts[currentLanguage] || errorTexts.ru) + err.message);
   });
 }
 
@@ -107,8 +163,7 @@ function submitSurvey(e) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -100px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
-
