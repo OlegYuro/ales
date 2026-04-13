@@ -273,22 +273,26 @@
         Пожалуйста, заполните анкету и сообщите нам о своём присутствии до <strong>31 мая 2026 г.</strong>
       </p>
 
-      <form class="survey-form" id="survey-form" onsubmit="submitSurvey(event)">
+      <form class="survey-form" id="survey-form"
+            action="https://formspree.io/f/xlgaedqz"
+            method="POST"
+            onsubmit="submitSurvey(event)">
+        <!-- Formspree needs _replyto to get guest email (optional) -->
 
         <div class="survey-field">
           <label class="survey-label">Введите ваше ФИО</label>
-          <input class="survey-input" id="survey-name" type="text" required placeholder="Фамилия Имя Отчество" />
+          <input class="survey-input" name="ФИО" type="text" required placeholder="Фамилия Имя Отчество" />
         </div>
 
         <div class="survey-field">
           <label class="survey-label">Сможете ли вы прийти к нам на свадьбу?</label>
           <div class="survey-options">
             <label class="survey-option">
-              <input type="radio" name="attend" value="yes" required />
+              <input type="radio" name="Присутствие" value="Да, с удовольствием" required />
               <span>Да, с удовольствием</span>
             </label>
             <label class="survey-option">
-              <input type="radio" name="attend" value="no" />
+              <input type="radio" name="Присутствие" value="К сожалению, не смогу" />
               <span>К сожалению, не смогу</span>
             </label>
           </div>
@@ -296,7 +300,7 @@
 
         <div class="survey-field">
           <label class="survey-label">Есть ли аллергия на продукты?</label>
-          <input class="survey-input" id="survey-allergy" type="text" placeholder="Если есть — укажите, если нет — оставьте пустым" />
+          <input class="survey-input" name="Аллергия" type="text" placeholder="Если есть — укажите, если нет — оставьте пустым" />
         </div>
 
         <button type="submit" class="survey-btn">Отправить</button>

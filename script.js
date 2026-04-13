@@ -77,9 +77,25 @@ function toggleMap() {
 // ── Survey ────────────────────────────────────────────────
 function submitSurvey(e) {
   e.preventDefault();
-  document.getElementById('survey-form').style.display = 'none';
-  const thanks = document.getElementById('survey-thanks');
-  thanks.classList.add('survey-thanks--visible');
+  const form = document.getElementById('survey-form');
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('survey-thanks').classList.add('survey-thanks--visible');
+    } else {
+      return res.json().then(d => { throw new Error(d.error || 'Ошибка отправки'); });
+    }
+  })
+  .catch(err => {
+    alert('Не удалось отправить анкету. Попробуйте ещё раз.\n' + err.message);
+  });
 }
 
 // ── Scroll reveal ─────────────────────────────────────────
