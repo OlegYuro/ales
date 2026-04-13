@@ -270,7 +270,8 @@ body {
 .section--olive .calendar__day { color: var(--beige); }
 .section--olive .calendar__day--wedding { background: transparent; color: var(--beige); }
 .section--olive .calendar__heart-outline { color: var(--beige); }
-.section--olive .tl-item::before { background: var(--beige); opacity: 0.5; }
+.section--olive .tl-item::before { background: var(--beige); opacity: 0.5; 
+  animation: heartbeat 1.2s ease-in-out infinite;}
 .section--olive .tl-dot { background: var(--beige); }
 
 .section__inner {
@@ -744,7 +745,7 @@ body {
   padding: 3rem 1.5rem;
   text-align: center;
   background: var(--olive);
-  color: rgba(241, 236, 217, 0.55);
+  color: var(--beige);
   font-family: var(--font-sans);
   font-size: 0.85rem;
   letter-spacing: 0.12em;
@@ -761,6 +762,20 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ─────────────────────────────────────────
+   Heart beat animation
+───────────────────────────────────────── */
+@keyframes heartbeat {
+  0%, 100% { transform: translate(-50%, -38%) scale(1); }
+  25% { transform: translate(-50%, -38%) scale(1.1); }
+  50% { transform: translate(-50%, -38%) scale(1); }
+}
+
+.calendar__heart-outline {
+  animation: heartbeat 1.2s ease-in-out infinite;
 }
 
 /* ─────────────────────────────────────────
