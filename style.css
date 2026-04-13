@@ -249,6 +249,17 @@ body {
 .section--olive { background: var(--olive); }
 
 /* Text contrast on olive */
+
+/* Text contrast on beige */
+.section--beige .section-title,
+.section--beige .tl-event,
+.section--beige .tl-desc,
+.section--beige .tl-time,
+.section--beige .body-text,
+.section--beige .details-item p {
+  color: var(--dark);
+}
+
 .section--olive .section-title,
 .section--olive .invite-text,
 .section--olive .body-text,
