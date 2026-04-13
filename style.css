@@ -256,7 +256,10 @@ body {
 .section--beige .tl-desc,
 .section--beige .tl-time,
 .section--beige .body-text,
-.section--beige .details-item p {
+.section--beige .details-item p,
+.section--beige .survey-intro,
+.section--beige .survey-label,
+.section--beige .survey-btn {
   color: var(--dark);
 }
 
@@ -270,10 +273,10 @@ body {
 .section--olive .venue-text,
 .section--olive .countdown__label,
 .section--olive .countdown__sep,
+.section--olive .countdown__num,
 .section--olive .photo-placeholder p {
   color: var(--beige);
 }
-.section--olive .countdown__num { color: var(--beige); }
 .section--olive .section-title { color: var(--beige); }
 .section--olive .section-title::after { background: var(--beige); opacity: 0.4; }
 .section--olive .calendar__header { color: var(--beige); }
