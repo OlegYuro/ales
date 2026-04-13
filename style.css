@@ -102,34 +102,6 @@ body {
   color: var(--olive-dark);
 }
 
-.splash__music-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: transparent;
-  border: 1px solid var(--olive);
-  color: var(--dark);
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  padding: 0.55rem 1.4rem;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.splash__music-btn:hover,
-.splash__music-btn.playing {
-  background: var(--olive);
-  color: var(--beige);
-}
-.splash__music-icon {
-  font-size: 1.1rem;
-  line-height: 1;
-}
-.splash__music-text {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-}
-
 .splash__enter {
   background: var(--dark);
   border: none;
@@ -159,16 +131,26 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--beige);
+  background: url('photo.jpg') center/cover no-repeat, var(--beige);
   padding: 2rem;
+  position: relative;
 }
 
-.hero__content { position: relative; }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(252, 251, 247, 0.60);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
 
 .hero__label {
   font-family: var(--font-sans);
-  font-size: clamp(0.65rem, 2vw, 0.8rem);
-  letter-spacing: 0.35em;
+  font-size: clamp(0.8rem, 2.5vw, 1.05rem);
+  letter-spacing: 0.45em;
   text-transform: uppercase;
   color: var(--dark-muted);
   margin-bottom: 1.4rem;
@@ -176,21 +158,17 @@ body {
 
 .hero__names {
   font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 13vw, 9rem);
+  font-size: clamp(4.5rem, 16vw, 11rem);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.02;
   color: var(--dark);
   letter-spacing: 0.03em;
-}
-.hero__names span {
-  color: var(--olive);
-  font-style: italic;
 }
 
 .hero__date {
   margin-top: 1.4rem;
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(1.1rem, 3.5vw, 1.7rem);
   letter-spacing: 0.35em;
   color: var(--olive-dark);
 }
@@ -200,6 +178,24 @@ body {
   width: 80px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--olive), transparent);
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  color: var(--dark);
+  opacity: 0.5;
+  z-index: 1;
+  user-select: none;
+  animation: bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(10px); }
 }
 
 /* ─────────────────────────────────────────
@@ -232,8 +228,8 @@ body {
 .section--olive .calendar__header { color: var(--beige); }
 .section--olive .calendar__dow { color: rgba(252,251,247,0.7); }
 .section--olive .calendar__day { color: var(--beige); }
-.section--olive .calendar__day--wedding { background: var(--beige); color: var(--olive); }
-.section--olive .calendar__heart { color: var(--olive); }
+.section--olive .calendar__day--wedding { background: transparent; color: var(--beige); }
+.section--olive .calendar__heart-outline { color: var(--beige); }
 .section--olive .tl-item::before { background: var(--beige); opacity: 0.5; }
 .section--olive .tl-dot { background: var(--beige); }
 
@@ -338,22 +334,35 @@ body {
 }
 
 .calendar__day--wedding {
-  background: var(--dark);
-  color: var(--beige) !important;
-  border-radius: 50%;
-  font-weight: 600;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  line-height: 1.2;
-  padding: 0.3rem 0;
+  justify-content: center;
+  background: transparent;
+  border-radius: 0;
+  font-weight: 700;
+  padding: 0;
+  overflow: visible;
+  height: 2.8rem;
 }
 
-.calendar__heart {
-  display: block;
-  font-size: 0.6rem;
-  color: var(--beige);
+.calendar__day-num {
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
   line-height: 1;
+  margin-top: 0.25rem;
+}
+
+.calendar__heart-outline {
+  position: absolute;
+  font-size: 2.6rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  line-height: 1;
+  opacity: 0.9;
 }
 
 /* ─────────────────────────────────────────

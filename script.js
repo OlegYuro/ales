@@ -40,13 +40,6 @@ function setMusicState(playing) {
     musicBtn.textContent = icon;
     musicBtn.classList.toggle('music-btn--playing', playing);
   }
-  // sync splash music button
-  const splashIcon = document.getElementById('splash-music-icon');
-  const splashText = document.getElementById('splash-music-text');
-  const splashBtn  = document.getElementById('splash-music-btn');
-  if (splashIcon) splashIcon.textContent = icon;
-  if (splashText) splashText.textContent = playing ? 'Выключить музыку' : 'Включить музыку';
-  if (splashBtn)  splashBtn.classList.toggle('playing', playing);
 }
 
 function toggleMusic() {
@@ -60,27 +53,16 @@ function toggleMusic() {
 
 // ── Splash ───────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
-  const splash     = document.getElementById('splash');
-  const enterBtn   = document.getElementById('splash-enter');
-  const splashMusicBtn = document.getElementById('splash-music-btn');
+  const splash   = document.getElementById('splash');
+  const enterBtn = document.getElementById('splash-enter');
 
-  // Music toggle on splash (does NOT close splash)
-  splashMusicBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMusic();
-  });
-
-  // Enter button closes splash
-  enterBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    closeSplash();
-  });
-
-  function closeSplash() {
+  enterBtn.addEventListener('click', () => {
     splash.classList.add('splash--hidden');
     splash.addEventListener('transitionend', () => splash.remove(), { once: true });
     if (musicBtn) musicBtn.classList.add('visible');
-  }
+    // Start music on enter
+    music.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
+  });
 });
 
 // ── Map toggle ────────────────────────────────────────────
