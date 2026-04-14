@@ -800,6 +800,19 @@ body {
   font-weight: 700;
 }
 
+
+/* Fixed language text (no translation) */
+.lang-fixed {
+  all: unset;
+  display: block;
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--dark-muted);
+  margin-bottom: 1.4rem;
+}
+
 /* ─────────────────────────────────────────
    Responsive
 ───────────────────────────────────────── */
