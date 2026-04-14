@@ -210,6 +210,7 @@ body {
   font-size: clamp(1.4rem, 5vw, 2.6rem);
   letter-spacing: 0.4em;
   color: var(--olive-dark);
+  font-weight: 400;
 }
 
 .hero__divider {
@@ -790,6 +791,13 @@ body {
 
 .calendar__heart-outline {
   animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+
+/* No wrap for Victory Hall */
+.nowrap {
+  white-space: nowrap;
+  font-weight: 700;
 }
 
 /* ─────────────────────────────────────────
