@@ -243,7 +243,7 @@ body {
    Section base + alternating backgrounds
 ───────────────────────────────────────── */
 .section {
-  padding: 0.4rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .section--beige { background: var(--beige); }
@@ -655,7 +655,7 @@ body {
   color: var(--dark);
   text-align: center;
   line-height: 1.65;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.8rem;
 }
 
 .survey-form {
