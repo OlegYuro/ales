@@ -109,7 +109,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1rem;
 }
 
 .splash__label {
@@ -128,7 +128,7 @@ body {
 
 .splash__names {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 10vw, 6rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 300;
   color: var(--dark);
   letter-spacing: 0.05em;
@@ -197,7 +197,7 @@ body {
 
 .hero__names {
   font-family: var(--font-serif);
-  font-size: clamp(4rem, 16vw, 14rem);
+  font-size: clamp(3rem, 12vw, 8rem);
   font-weight: 300;
   line-height: 1.0;
   color: var(--dark);
