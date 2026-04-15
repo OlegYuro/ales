@@ -193,12 +193,21 @@ body {
   text-transform: uppercase;
   color: var(--dark);
   margin-bottom: 4rem;
-  font-weight: 950;
+  font-weight: 900;
   opacity: 1;
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 0.5rem;
-  -webkit-text-stroke: 0.4px var(--dark);
+  -webkit-text-stroke: 0.8px var(--dark);
+  text-shadow: 
+    -0.5px -0.5px 0 var(--dark),
+    0.5px -0.5px 0 var(--dark),
+    -0.5px 0.5px 0 var(--dark),
+    0.5px 0.5px 0 var(--dark),
+    -0.5px 0 0 var(--dark),
+    0.5px 0 0 var(--dark),
+    0 -0.5px 0 var(--dark),
+    0 0.5px 0 var(--dark);
 }
 
 .hero__names {
