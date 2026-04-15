@@ -192,7 +192,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 4rem;
   font-weight: 700;
 }
 
@@ -203,12 +203,12 @@ body {
   line-height: 1.2;
   color: var(--dark);
   letter-spacing: 0.01em;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 3rem;
 }
 
 .hero__date {
-  margin-top: 1rem;
+  margin-top: 3rem;
   font-family: var(--font-serif);
   font-size: clamp(1.4rem, 5vw, 2.6rem);
   letter-spacing: 0.4em;
