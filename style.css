@@ -192,7 +192,7 @@ body {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--dark);
-  margin-bottom: 1rem;
+  margin-bottom: 8rem;
   margin-top: 0;
   font-weight: 700;
   opacity: 1;
@@ -205,7 +205,7 @@ body {
   line-height: 1.2;
   color: var(--dark);
   letter-spacing: 0.01em;
-  margin-top: 0;
+  margin-top: 4rem;
   margin-bottom: 0.5rem;
 }
 
@@ -831,11 +831,11 @@ body {
 ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero__label {
-    margin-bottom: 2rem !important;
+    margin-bottom: 3rem !important;
   }
   
   .hero__names {
-    margin-top: 0rem !important;
+    margin-top: 2rem !important;
     margin-bottom: 0.5rem !important;
   }
   
@@ -850,11 +850,11 @@ body {
   .tl-item { grid-template-columns: 60px 1fr; gap: 0 1rem; }
   
   .hero__label {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 2rem !important;
   }
   
   .hero__names {
-    margin-top: 0rem !important;
+    margin-top: 1.5rem !important;
     margin-bottom: 0.5rem !important;
   }
   
