@@ -207,7 +207,7 @@ body {
   line-height: 1.2;
   color: var(--dark);
   letter-spacing: 0.01em;
-  margin-top: 15rem;
+  margin-top: 25rem;
   margin-bottom: 1rem;
 }
 
@@ -836,7 +836,7 @@ body {
   }
   
   .hero__names {
-    margin-top: 12rem !important;
+    margin-top: 18rem !important;
     margin-bottom: 1rem !important;
   }
   
@@ -855,7 +855,7 @@ body {
   }
   
   .hero__names {
-    margin-top: 12rem !important;
+    margin-top: 18rem !important;
     margin-bottom: 1rem !important;
   }
   
