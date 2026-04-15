@@ -192,7 +192,7 @@ body {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--dark);
-  margin-bottom: 15rem;
+  margin-bottom: 8rem;
   font-weight: 900;
   opacity: 1;
   text-decoration: underline;
@@ -207,8 +207,8 @@ body {
   line-height: 1.2;
   color: var(--dark);
   letter-spacing: 0.01em;
-  margin-top: 25rem;
-  margin-bottom: 1rem;
+  margin-top: 12rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero__date {
@@ -832,12 +832,12 @@ body {
 ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero__label {
-    margin-bottom: 12rem !important;
+    margin-bottom: 6rem !important;
   }
   
   .hero__names {
-    margin-top: 18rem !important;
-    margin-bottom: 1rem !important;
+    margin-top: 20rem !important;
+    margin-bottom: 0.3rem !important;
   }
   
   .hero__date {
@@ -851,12 +851,12 @@ body {
   .tl-item { grid-template-columns: 60px 1fr; gap: 0 1rem; }
   
   .hero__label {
-    margin-bottom: 10rem !important;
+    margin-bottom: 6rem !important;
   }
   
   .hero__names {
-    margin-top: 18rem !important;
-    margin-bottom: 1rem !important;
+    margin-top: 20rem !important;
+    margin-bottom: 0.3rem !important;
   }
   
   .hero__date {
