@@ -828,16 +828,16 @@ body {
 ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero__label {
-    margin-bottom: 6rem !important;
+    margin-bottom: 12rem !important;
   }
   
   .hero__names {
     margin-top: 0rem !important;
-    margin-bottom: 4rem !important;
+    margin-bottom: 8rem !important;
   }
   
   .hero__date {
-    margin-top: 4rem !important;
+    margin-top: 8rem !important;
   }
 }
 
@@ -847,16 +847,16 @@ body {
   .tl-item { grid-template-columns: 60px 1fr; gap: 0 1rem; }
   
   .hero__label {
-    margin-bottom: 5rem !important;
+    margin-bottom: 10rem !important;
   }
   
   .hero__names {
     margin-top: 0rem !important;
-    margin-bottom: 3rem !important;
+    margin-bottom: 8rem !important;
   }
   
   .hero__date {
-    margin-top: 3rem !important;
+    margin-top: 8rem !important;
   }
 }
 
