@@ -188,12 +188,13 @@ body {
 
 .hero__label {
   font-family: var(--font-sans);
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
-  letter-spacing: 0.15em;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--dark);
   margin-bottom: 15rem;
-  font-weight: 700;
+  font-weight: 900;
+  opacity: 1;
 }
 
 .hero__names {
@@ -203,7 +204,7 @@ body {
   line-height: 1.2;
   color: var(--dark);
   letter-spacing: 0.01em;
-  margin-top: 0rem;
+  margin-top: 15rem;
   margin-bottom: 10rem;
 }
 
@@ -832,7 +833,7 @@ body {
   }
   
   .hero__names {
-    margin-top: 0rem !important;
+    margin-top: 12rem !important;
     margin-bottom: 8rem !important;
   }
   
@@ -851,7 +852,7 @@ body {
   }
   
   .hero__names {
-    margin-top: 0rem !important;
+    margin-top: 12rem !important;
     margin-bottom: 8rem !important;
   }
   
