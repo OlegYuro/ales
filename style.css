@@ -191,8 +191,9 @@ body {
   font-size: clamp(1.2rem, 4vw, 1.8rem);
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: var(--dark-muted);
+  color: var(--dark);
   margin-bottom: 1.4rem;
+  font-weight: 600;
 }
 
 .hero__names {
@@ -209,8 +210,8 @@ body {
   font-family: var(--font-serif);
   font-size: clamp(1.4rem, 5vw, 2.6rem);
   letter-spacing: 0.4em;
-  color: var(--olive-dark);
-  font-weight: 400;
+  color: var(--dark);
+  font-weight: 600;
 }
 
 .hero__divider {
@@ -625,8 +626,10 @@ body {
 
 .details-item {
   display: flex;
+  flex-direction: column;
   gap: 1.2rem;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .details-icon {
