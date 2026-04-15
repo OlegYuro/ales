@@ -187,27 +187,17 @@ body {
 }
 
 .hero__label {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: clamp(1.6rem, 6vw, 2.8rem);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--dark);
   margin-bottom: 4rem;
-  font-weight: 900;
+  font-weight: 700;
   opacity: 1;
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 0.5rem;
-  -webkit-text-stroke: 0.8px var(--dark);
-  text-shadow: 
-    -0.5px -0.5px 0 var(--dark),
-    0.5px -0.5px 0 var(--dark),
-    -0.5px 0.5px 0 var(--dark),
-    0.5px 0.5px 0 var(--dark),
-    -0.5px 0 0 var(--dark),
-    0.5px 0 0 var(--dark),
-    0 -0.5px 0 var(--dark),
-    0 0.5px 0 var(--dark);
 }
 
 .hero__names {
