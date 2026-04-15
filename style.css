@@ -821,8 +821,45 @@ body {
 /* ─────────────────────────────────────────
    Responsive
 ───────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────
+   Mobile Hero adjustments
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero__label {
+    margin-bottom: 6rem !important;
+  }
+  
+  .hero__names {
+    margin-top: 0rem !important;
+    margin-bottom: 4rem !important;
+  }
+  
+  .hero__date {
+    margin-top: 4rem !important;
+  }
+}
+
 @media (max-width: 480px) {
   .countdown__sep { display: none; }
+  .countdown { gap: 1.5rem; }
+  .tl-item { grid-template-columns: 60px 1fr; gap: 0 1rem; }
+  
+  .hero__label {
+    margin-bottom: 5rem !important;
+  }
+  
+  .hero__names {
+    margin-top: 0rem !important;
+    margin-bottom: 3rem !important;
+  }
+  
+  .hero__date {
+    margin-top: 3rem !important;
+  }
+}
+
   .countdown { gap: 1.5rem; }
   .tl-item { grid-template-columns: 60px 1fr; gap: 0 1rem; }
 }
