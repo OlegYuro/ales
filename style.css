@@ -182,18 +182,27 @@ body {
 }
 
 .hero__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__label {
+  position: absolute;
+  top: clamp(2rem, 5vh, 4rem);
+  left: 0;
+  right: 0;
+  text-align: center;
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 6vw, 2.8rem);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--dark);
-  margin-bottom: 8rem;
-  margin-top: 0;
+  margin: 0;
   font-weight: 700;
   opacity: 1;
 }
@@ -205,12 +214,16 @@ body {
   line-height: 1.2;
   color: var(--dark);
   letter-spacing: 0.01em;
-  margin-top: 4rem;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 .hero__date {
-  margin-top: 0.5rem;
+  position: absolute;
+  bottom: clamp(4rem, 8vh, 6rem);
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
   font-family: var(--font-serif);
   font-size: clamp(1.4rem, 5vw, 2.6rem);
   letter-spacing: 0.4em;
@@ -829,38 +842,10 @@ body {
 /* ─────────────────────────────────────────
    Mobile Hero adjustments
 ───────────────────────────────────────── */
-@media (max-width: 768px) {
-  .hero__label {
-    margin-bottom: 3rem !important;
-  }
-  
-  .hero__names {
-    margin-top: 2rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  .hero__date {
-    margin-top: 0.5rem !important;
-  }
-}
-
 @media (max-width: 480px) {
   .countdown__sep { display: none; }
   .countdown { gap: 1.5rem; }
   .tl-item { grid-template-columns: 60px 1fr; gap: 0 1rem; }
-  
-  .hero__label {
-    margin-bottom: 2rem !important;
-  }
-  
-  .hero__names {
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  .hero__date {
-    margin-top: 0.5rem !important;
-  }
 }
 
   .countdown { gap: 1.5rem; }
